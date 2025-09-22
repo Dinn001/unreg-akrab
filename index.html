@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Unreg Paket AKRAB — XL & Axis</title>
+  <style>
+    body{
+      margin:0;padding:20px;
+      font-family:sans-serif;
+      background:linear-gradient(135deg,#0f172a,#0b3b7a);
+      color:#f8fbff;
+      display:flex;
+      flex-direction:column;
+      min-height:100vh;
+      opacity:0;
+      animation:fadeIn 1s ease forwards;
+    }
+    @keyframes fadeIn{
+      from{opacity:0;transform:translateY(10px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+    h1{margin-top:0;transition:color .3s;}
+    h1:hover{color:#60a5fa}
+    .card{
+      background:rgba(255,255,255,0.06);
+      border-radius:12px;
+      padding:16px;
+      margin-bottom:16px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.2);
+      transition:transform .3s, box-shadow .3s;
+    }
+    .card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 6px 18px rgba(0,0,0,0.3);
+    }
+    .btn{
+      display:inline-block;
+      padding:10px 14px;
+      margin:4px 4px 0 0;
+      border-radius:8px;
+      background:linear-gradient(90deg,#3b82f6,#7c3aed);
+      color:white;text-decoration:none;
+      font-weight:600;
+      cursor:pointer;
+      transition:transform .2s, box-shadow .2s;
+    }
+    .btn:hover{
+      transform:scale(1.05);
+      box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    }
+    .btn.ghost{
+      background:rgba(255,255,255,0.1);
+    }
+    .note{font-size:14px;color:#b0c3e0}
+    .kbd{
+      background:rgba(255,255,255,0.15);
+      padding:4px 6px;
+      border-radius:6px;
+      font-family:monospace;
+    }
+    .img-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:10px;
+    }
+    .img-item{
+      text-align:center;
+      font-size:13px;
+      color:#cbd5e1;
+      transition:transform .3s;
+    }
+    .img-item:hover{
+      transform:translateY(-4px);
+    }
+    .img-item img{
+      width:100px;
+      border-radius:12px;
+      transition:transform .3s, box-shadow .3s;
+      display:block;
+      margin:0 auto 4px auto;
+    }
+    .img-item img:hover{
+      transform:scale(1.08);
+      box-shadow:0 6px 15px rgba(0,0,0,0.3);
+    }
+    footer{
+      margin-top:auto;
+      text-align:center;
+      font-size:13px;
+      color:#94a3b8;
+      padding:12px 0;
+      border-top:1px solid rgba(255,255,255,0.1);
+      transition:color .3s;
+    }
+    footer:hover{
+      color:#e2e8f0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Unreg Paket AKRAB</h1>
+  <p>Gunakan dial berikut untuk berhenti Paket AKRAB:</p>
+
+  <div class="card">
+    <h2>📍 XL</h2>
+    <p>Ketik kode USSD:</p>
+    <p class="kbd" id="xlCode">*808*6*1*3#</p>
+    <a class="btn" href="tel:*808*6*1*3%23">📞 Dial Sekarang</a>
+    <button class="btn ghost" onclick="copyCode('xlCode')">📋 Salin Kode</button>
+  </div>
+
+  <div class="card">
+    <h2>📍 AXIS</h2>
+    <p>Ketik kode USSD:</p>
+    <p class="kbd" id="axisCode">*808*5*4#</p>
+    <a class="btn" href="tel:*808*5*4%23">📞 Dial Sekarang</a>
+    <button class="btn ghost" onclick="copyCode('axisCode')">📋 Salin Kode</button>
+  </div>
+
+  <div class="card">
+    <h2>❗ Jika terjadi error</h2>
+    <ol id="errorSteps">
+      <li>Dial <span class="kbd">*808#</span></li>
+      <li>Pilih <b>Info</b></li>
+      <li>Pilih <b>Info Kartu XL-ku</b></li>
+      <li>Pilih <b>Stop Langganan</b></li>
+      <li>Pilih kedua paket:
+        <ul>
+          <li>Bonus Paket Akrab</li>
+          <li>Paket Akrab</li>
+        </ul>
+      </li>
+    </ol>
+    <p class="note">⚠️ Wajib unreg kedua paket agar berhenti sepenuhnya.</p>
+    <button class="btn ghost" onclick="copyError()">📋 Salin Instruksi</button>
+  </div>
+
+  <div class="card">
+    <h2>Via Aplikasi</h2>
+
+    <h3>📍 XL</h3>
+    <div class="img-grid">
+      <div class="img-item"><a href="https://my.xl.co.id" target="_blank"><img src="assets/xl1.png" alt="MyXL 1"></a><span>MyXL 1</span></div>
+      <div class="img-item"><a href="https://my.xl.co.id" target="_blank"><img src="assets/xl2.png" alt="MyXL 2"></a><span>MyXL 2</span></div>
+      <div class="img-item"><a href="https://my.xl.co.id" target="_blank"><img src="assets/xl3.png" alt="MyXL 3"></a><span>MyXL 3</span></div>
+      <div class="img-item"><a href="https://my.xl.co.id" target="_blank"><img src="assets/xl4.png" alt="MyXL 4"></a><span>MyXL 4</span></div>
+      <div class="img-item"><a href="https://my.xl.co.id" target="_blank"><img src="assets/xl5.png" alt="MyXL 5"></a><span>MyXL 5</span></div>
+    </div>
+
+    <h3>📍 AXIS</h3>
+    <div class="img-grid">
+      <div class="img-item"><a href="https://myaxis.id" target="_blank"><img src="assets/axis1.png" alt="MyAxis 1"></a><span>MyAxis 1</span></div>
+      <div class="img-item"><a href="https://myaxis.id" target="_blank"><img src="assets/axis2.png" alt="MyAxis 2"></a><span>MyAxis 2</span></div>
+      <div class="img-item"><a href="https://myaxis.id" target="_blank"><img src="assets/axis3.png" alt="MyAxis 3"></a><span>MyAxis 3</span></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>💬 Grup WhatsApp</h2>
+    <p>Bergabung dengan komunitas <b>LAPAK INTERNET DINNS</b> untuk update promo & diskusi:</p>
+    <a class="btn" href="https://chat.whatsapp.com/Hp9kWDJdqjxIh11OyeSbIa?mode=ems_copy_t" target="_blank">🚀 Join Grup WA</a>
+  </div>
+
+  <footer>
+    Copyright © 2025 <b>DINNS STORE</b> — Made with 💙 by Dinns
+  </footer>
+
+  <script>
+    function copyCode(id){
+      const text = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(text).then(()=>{
+        alert("Kode disalin: " + text);
+      }).catch(()=>{
+        prompt("Salin kode secara manual:", text);
+      });
+    }
+    function copyError(){
+      const steps = document.getElementById("errorSteps").innerText;
+      navigator.clipboard.writeText(steps).then(()=>{
+        alert("Instruksi error berhasil disalin.");
+      }).catch(()=>{
+        prompt("Salin instruksi manual:", steps);
+      });
+    }
+  </script>
+</body>
+</html>
